@@ -173,6 +173,13 @@ footer .links{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
 .access dt{font-size:13px;color:var(--muted)}
 .access dd{margin:0;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--ink);user-select:all;overflow-wrap:anywhere}
 .access p{font-size:12.5px;color:var(--muted)}
+.hero-side{align-self:center}
+.hero-side .access{margin-top:0;max-width:none;padding:20px 22px}
+.demo.wide{grid-template-columns:1.1fr 1fr}
+.demo.wide .chat{padding:20px}
+.demo.wide .demo-out{display:flex;flex-direction:column;border-left:1px solid var(--line)}
+.demo.wide .arrow{border-top:0}
+@media (max-width:860px){.demo.wide{grid-template-columns:1fr}.demo.wide .demo-out{border-left:0}.demo.wide .arrow{border-top:1px dashed var(--line)}}
 </style>
 </head>
 <body>
@@ -189,6 +196,10 @@ footer .links{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
       <a class="btn primary" href="https://turnover-insights-lijq.vercel.app" target="_blank" rel="noopener">Abrir el dashboard ↗</a>
       <a class="btn" href="#brief">Leer el brief</a>
     </div>
+    
+  </div>
+
+  <div class="hero-side">
     <div class="access">
       <div class="t-label">Acceso de demostración · temporal</div>
       <dl>
@@ -196,37 +207,6 @@ footer .links{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
         <dt>Contraseña</dt><dd>admin123</dd>
       </dl>
       <p>Cuenta temporal con datos de prueba, habilitada solo durante este proceso de selección.</p>
-    </div>
-  </div>
-
-  <div class="demo" aria-label="Un turno real de prueba: de mensajes de WhatsApp a un caso priorizado">
-    <div class="chat">
-      <div class="chat-head"><strong>Diego R · cleaner</strong><span>Sunset Loft 4A</span></div>
-      <div class="bubble">Inicio turno en Sunset Loft 4A<time>10:22</time></div>
-      <div class="bubble">Se acabó el papel higiénico<time>10:22</time></div>
-      <div class="bubble bot">Recibido. Tienes autorización de compra hasta $25 USD. Guarda la factura.<time>10:22</time></div>
-      <div class="bubble">Y se robaron la cafetera<time>10:23</time></div>
-      <div class="bubble photo">📷 foto de la factura<time>10:24</time></div>
-      <div class="bubble bot">Gasto registrado: $6.000 COP. Presupuesto disponible este mes: $446.298 COP.<time>10:24</time></div>
-    </div>
-    <div class="arrow">
-      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v12M4 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      n8n + Claude API · extrae, prioriza y avisa
-    </div>
-    <div class="ticket">
-      <div class="t-row">
-        <div><div class="t-id">TCK-WA-85964835</div><div class="t-prop">Sunset Loft 4A · 15/09/2026</div></div>
-        <div class="t-row" style="gap:10px"><span class="pill crit">CRÍTICA</span><span class="conf">confianza 85%</span></div>
-      </div>
-      <div class="t-block">
-        <div class="t-label">Incidente</div>
-        <p>Se reporta robo de la cafetera del apartamento</p>
-      </div>
-      <div>
-        <div class="t-label">Inventario bajo mínimo</div>
-        <div class="inv"><span>toallas 0 / mín. 3</span><span>papel higiénico 3 / mín. 4</span></div>
-      </div>
-      <p class="sample">Turno real de prueba, 15 de septiembre de 2026.</p>
     </div>
   </div>
 </header>
@@ -296,6 +276,45 @@ footer .links{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
         </div>
       </div>
     </article>
+  </div>
+</section>
+
+<section id="ejemplo">
+  <div class="sec-head">
+    <h2>Un turno de ejemplo</h2>
+    <p>Lo que escribe la cleaner por WhatsApp y el caso que le llega a la supervisora. Son mensajes reales de una prueba del 15 de septiembre.</p>
+  </div>
+  <div class="demo wide" aria-label="Un turno real de prueba: de mensajes de WhatsApp a un caso priorizado">
+    <div class="chat">
+      <div class="chat-head"><strong>Diego R · cleaner</strong><span>Sunset Loft 4A</span></div>
+      <div class="bubble">Inicio turno en Sunset Loft 4A<time>10:22</time></div>
+      <div class="bubble">Se acabó el papel higiénico<time>10:22</time></div>
+      <div class="bubble bot">Recibido. Tienes autorización de compra hasta $25 USD. Guarda la factura.<time>10:22</time></div>
+      <div class="bubble">Y se robaron la cafetera<time>10:23</time></div>
+      <div class="bubble photo">📷 foto de la factura<time>10:24</time></div>
+      <div class="bubble bot">Gasto registrado: $6.000 COP. Presupuesto disponible este mes: $446.298 COP.<time>10:24</time></div>
+    </div>
+    <div class="demo-out">
+    <div class="arrow">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v12M4 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      n8n + Claude API · extrae, prioriza y avisa
+    </div>
+    <div class="ticket">
+      <div class="t-row">
+        <div><div class="t-id">TCK-WA-85964835</div><div class="t-prop">Sunset Loft 4A · 15/09/2026</div></div>
+        <div class="t-row" style="gap:10px"><span class="pill crit">CRÍTICA</span><span class="conf">confianza 85%</span></div>
+      </div>
+      <div class="t-block">
+        <div class="t-label">Incidente</div>
+        <p>Se reporta robo de la cafetera del apartamento</p>
+      </div>
+      <div>
+        <div class="t-label">Inventario bajo mínimo</div>
+        <div class="inv"><span>toallas 0 / mín. 3</span><span>papel higiénico 3 / mín. 4</span></div>
+      </div>
+      <p class="sample">Turno real de prueba, 15 de septiembre de 2026.</p>
+    </div>
+    </div>
   </div>
 </section>
 
